@@ -61,9 +61,8 @@
             &copy; 2025 Juan Antonio Paredes Toro - Estudio Contable y Auditoría. Todos los derechos reservados.
         </footer>
     </div>
-<div id="comments"></div>
 <script>
-if (!document.querySelector('script[src="https://utteranc.es/client.js"]')) {
+if (!document.getElementById('utterances')) {
     let script = document.createElement('script');
     script.src = "https://utteranc.es/client.js";
     script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
@@ -71,6 +70,7 @@ if (!document.querySelector('script[src="https://utteranc.es/client.js"]')) {
     script.setAttribute("theme", "github-light");
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
+    script.id = "utterances"; // Agregamos un ID para evitar duplicados
     document.body.appendChild(script);
 }
 </script>
