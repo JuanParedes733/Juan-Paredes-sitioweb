@@ -61,18 +61,35 @@
             &copy; 2025 Juan Antonio Paredes Toro - Estudio Contable y Auditoría. Todos los derechos reservados.
         </footer>
     </div>
+<div id="comments"></div>
+
 <script>
-if (!document.getElementById('utterances')) {
-    let script = document.createElement('script');
-    script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
-    script.id = "utterances"; // Agregamos un ID para evitar duplicados
-    document.body.appendChild(script);
-}
+    function loadUtterances() {
+        // Elimina cualquier script anterior para evitar duplicados
+        let existingScript = document.querySelector('script[src="https://utteranc.es/client.js"]');
+        if (existingScript) {
+            existingScript.remove();
+        }
+
+        // Elimina cualquier contenedor de comentarios previo
+        let existingComments = document.getElementById("comments").firstChild;
+        if (existingComments) {
+            document.getElementById("comments").innerHTML = "";
+        }
+
+        // Crea el script de Utterances y lo inserta en el div de comentarios
+        let script = document.createElement("script");
+        script.src = "https://utteranc.es/client.js";
+        script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
+        script.setAttribute("issue-term", "pathname");
+        script.setAttribute("theme", "github-light");
+        script.setAttribute("crossorigin", "anonymous");
+        script.async = true;
+        document.getElementById("comments").appendChild(script);
+    }
+
+    // Carga Utterances cuando la página termine de cargar
+    window.onload = loadUtterances;
 </script>
 
 </body>
