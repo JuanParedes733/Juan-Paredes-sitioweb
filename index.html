@@ -62,22 +62,23 @@
         </footer>
     </div>
 <div id="comments"></div>
+<!-- Contenedor único para los comentarios -->
+<div id="comments"></div>
 
 <script>
     function loadUtterances() {
-        // Elimina cualquier script anterior para evitar duplicados
+        let commentsContainer = document.getElementById("comments");
+
+        // Elimina cualquier contenido previo en el contenedor de comentarios
+        commentsContainer.innerHTML = "";
+
+        // Verifica si ya existe un script de Utterances en la página
         let existingScript = document.querySelector('script[src="https://utteranc.es/client.js"]');
         if (existingScript) {
-            existingScript.remove();
+            existingScript.remove(); // Elimina el script si ya existe
         }
 
-        // Elimina cualquier contenedor de comentarios previo
-        let existingComments = document.getElementById("comments").firstChild;
-        if (existingComments) {
-            document.getElementById("comments").innerHTML = "";
-        }
-
-        // Crea el script de Utterances y lo inserta en el div de comentarios
+        // Crea un nuevo script para cargar Utterances
         let script = document.createElement("script");
         script.src = "https://utteranc.es/client.js";
         script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
@@ -85,11 +86,13 @@
         script.setAttribute("theme", "github-light");
         script.setAttribute("crossorigin", "anonymous");
         script.async = true;
-        document.getElementById("comments").appendChild(script);
+
+        // Agrega el script dentro del contenedor de comentarios
+        commentsContainer.appendChild(script);
     }
 
-    // Carga Utterances cuando la página termine de cargar
-    window.onload = loadUtterances;
+    // Asegurar que el script solo se cargue una vez cuando la página termine de cargar
+    window.addEventListener("DOMContentLoaded", loadUtterances);
 </script>
 
 </body>
