@@ -65,20 +65,26 @@
 <!-- Contenedor único para los comentarios -->
 <div id="comments"></div>
 
+<!-- Contenedor único para comentarios -->
+<div id="comments"></div>
+
 <script>
     function loadUtterances() {
         let commentsContainer = document.getElementById("comments");
 
-        // Elimina cualquier contenido previo en el contenedor de comentarios
-        commentsContainer.innerHTML = "";
-
-        // Verifica si ya existe un script de Utterances en la página
-        let existingScript = document.querySelector('script[src="https://utteranc.es/client.js"]');
-        if (existingScript) {
-            existingScript.remove(); // Elimina el script si ya existe
+        // Verifica y elimina cualquier instancia previa de comentarios
+        let existingUtterances = commentsContainer.querySelector(".utterances");
+        if (existingUtterances) {
+            existingUtterances.remove();
         }
 
-        // Crea un nuevo script para cargar Utterances
+        // Verifica si ya existe un script de Utterances y lo elimina
+        let existingScript = document.querySelector('script[src="https://utteranc.es/client.js"]');
+        if (existingScript) {
+            existingScript.remove();
+        }
+
+        // Crea el nuevo script de Utterances
         let script = document.createElement("script");
         script.src = "https://utteranc.es/client.js";
         script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
@@ -91,9 +97,12 @@
         commentsContainer.appendChild(script);
     }
 
-    // Asegurar que el script solo se cargue una vez cuando la página termine de cargar
-    window.addEventListener("DOMContentLoaded", loadUtterances);
+    // Ejecutar solo una vez cuando la página ha terminado de cargar
+    document.addEventListener("DOMContentLoaded", function () {
+        loadUtterances();
+    });
 </script>
+    
 
 </body>
 </html>
