@@ -126,3 +126,7 @@ button:hover {
 .rating input:checked ~ label {
     color: gold;
 }
+nav ul li a[href="#comentarios"] {
+    color: #ffcc00; /* Cambia el color solo para "Comentarios" */
+    font-weight: bold;
+}
