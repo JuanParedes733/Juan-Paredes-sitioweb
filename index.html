@@ -56,32 +56,34 @@
             <p><label for="correo">Correo:</label> <a href="mailto:paredestorojuan@gmail.com" id="correo">paredestorojuan@gmail.com</a></p>
         </section>
 
-
         <footer>
             &copy; 2025 Juan Antonio Paredes Toro - Estudio Contable y Auditoría. Todos los derechos reservados.
         </footer>
     </div>
 
-<!-- Contenedor único para los comentarios -->
-<div id="comments"></div>
+    <!-- Mensaje informativo para los comentarios -->
+    <div id="comentario-info">
+        <p><strong>Por favor, en el campo de comentarios anteponer la fecha y hora de su comentario.</strong></p>
+    </div>
 
-<script>
-    function initUtterances() {
-        let commentsContainer = document.getElementById("comments");
-        commentsContainer.innerHTML = "";
-        let script = document.createElement("script");
-        script.src = "https://utteranc.es/client.js";
-        script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
-        script.setAttribute("issue-term", "pathname");
-        script.setAttribute("theme", "github-light");
-        script.setAttribute("crossorigin", "anonymous");
-        script.async = true;
-        commentsContainer.appendChild(script);
-    }
+    <!-- Contenedor único para los comentarios -->
+    <div id="comments"></div>
 
-    document.addEventListener("DOMContentLoaded", initUtterances);
-</script>
-     
+    <script>
+        function initUtterances() {
+            let commentsContainer = document.getElementById("comments");
+            commentsContainer.innerHTML = "";
+            let script = document.createElement("script");
+            script.src = "https://utteranc.es/client.js";
+            script.setAttribute("repo", "JuanParedes733/gestion-comentarios");
+            script.setAttribute("issue-term", "pathname");
+            script.setAttribute("theme", "github-light");
+            script.setAttribute("crossorigin", "anonymous");
+            script.async = true;
+            commentsContainer.appendChild(script);
+        }
 
+        document.addEventListener("DOMContentLoaded", initUtterances);
+    </script>
 </body>
 </html>
