@@ -63,7 +63,6 @@ footer {
     border-radius: 0 0 10px 10px;
 }
 
-/* Comentarios */
 #comentario-info {
     background-color: #ffebcc;
     padding: 15px;
@@ -71,11 +70,14 @@ footer {
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    margin: 20px auto;
+    margin: 20px auto; /* Centra el cuadro */
     border-radius: 5px;
-    text-align: center; /* Centrar texto */
-    width: 80%; /* Ajustar ancho */
-    max-width: 600px; /* Limitar el tamaño para que no sea muy grande */
+    text-align: center; /* Centra el texto */
+    display: flex;
+    justify-content: center; /* Asegura centrado horizontal */
+    align-items: center; /* Asegura centrado vertical */
+    width: 80%;
+    max-width: 600px;
 }
 
 #comments {
