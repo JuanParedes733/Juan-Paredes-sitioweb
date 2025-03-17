@@ -130,3 +130,11 @@ nav ul li a[href="#comentarios"] {
     color: #ffcc00; /* Cambia el color solo para "Comentarios" */
     font-weight: bold;
 }
+.social-links {
+        display: flex;
+        gap: 10px; /* Espacio entre los íconos */
+    }
+    .social-links img {
+        width: 30px; /* Cambia el tamaño aquí */
+        height: 30px;
+    }
